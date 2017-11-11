@@ -1,9 +1,5 @@
 #include "TimeShowPanel.h"
 
-TimeShowPanel::TimeShowPanel() {
-  tickInterval = 1000;
-}
-
 void TimeShowPanel::paint() {
   Resources::lcd.clear();
   Resources::lcd.noCursor();

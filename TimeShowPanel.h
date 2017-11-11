@@ -15,7 +15,7 @@ class TimeShowPanel : public Panel {
   Time time;
 
   public:
-  TimeShowPanel();
+  TimeShowPanel() : Panel(1000) {}
   virtual void paint();
   virtual void onTickEvent();
 

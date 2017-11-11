@@ -11,11 +11,10 @@ class Panel {
 
 private:
   unsigned long lastTickTime;
+  unsigned long tickInterval;
 
-protected:
-  unsigned long tickInterval = 0;
-  
 public:
+  Panel(unsigned long tickInterval = 0) : tickInterval(tickInterval) {}
   virtual void paint() = 0;
   virtual void onKeyEvent(char key) {}
   virtual void onTickEvent() {}
