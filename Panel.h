@@ -12,7 +12,7 @@ class Panel {
   virtual void paint() = 0;
   virtual void onKeyEvent(char key) {}
   virtual void onTickEvent() {}
-  void onEnable();
+  virtual void onEnable();
   void handleEvents();
 
 };

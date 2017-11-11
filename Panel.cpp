@@ -15,7 +15,9 @@ void Panel::handleEvents() {
 }
 
 void Panel::onEnable() {
+  lastTickTime = millis();
   Resources::lcd.clear();
   Resources::lcd.noCursor();
+  noTone(Resources::BUZZER_PIN);
   paint();
 }
