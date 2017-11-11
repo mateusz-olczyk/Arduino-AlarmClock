@@ -3,10 +3,16 @@
 
 #include <LiquidCrystal.h>
 #include "Panel.h"
+#include "TimeShowPanel.h"
+#include "PanelSelector.h"
 #include "Time.h"
 
 namespace Resources {
   extern LiquidCrystal lcd;
+  namespace Panels {
+    extern TimeShowPanel timeShowPanel;
+    extern PanelSelector panelSelector;
+  }
 }
 
 class TimeSetPanel : public Panel {

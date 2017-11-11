@@ -21,6 +21,10 @@ void TimeSetPanel::onKeyEvent(char key) {
     case 'R':
     onRightKeyEvent();
     break;
+    case 'S':
+    Resources::Panels::timeShowPanel.setTime(time);
+    Resources::Panels::panelSelector.setPanel(&Resources::Panels::timeShowPanel);
+    break;
   }
 }
 

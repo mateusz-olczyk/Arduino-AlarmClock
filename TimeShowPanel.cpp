@@ -9,3 +9,7 @@ void TimeShowPanel::onTickEvent() {
   ++time;
   paint();
 }
+
+void TimeShowPanel::setTime(const Time &time) {
+  this->time = time;
+}
