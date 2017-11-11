@@ -3,12 +3,16 @@
 
 #include <LiquidCrystal.h>
 
+namespace Resources {
+  extern LiquidCrystal lcd;
+}
+
 class Time {
 
   private:
-  int _hour;
-  int _minute;
-  int _second;
+  int hour;
+  int minute;
+  int second;
 
   public:
   Time();
@@ -19,8 +23,8 @@ class Time {
   bool setMinute(int minute);
   int getSecond();
   bool setSecond(int second);
-  void print(LiquidCrystal & lcd, bool withSeconds);
-  
+  void print(bool withSeconds);
+
 };
 
 #endif
