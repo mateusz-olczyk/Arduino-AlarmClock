@@ -1,8 +1,8 @@
 #include "TimeSetPanel.h"
 
 void TimeSetPanel::paint() {
-  Resources::lcd.clear();
   Resources::lcd.noCursor();
+  Resources::lcd.setCursor(0, 0);
   Resources::lcd.print(message);
   Resources::lcd.setCursor(0, 1);
   time.print(false);

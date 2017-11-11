@@ -1,6 +1,6 @@
 #include <LiquidCrystal.h>
 #include <MD_AButton.h>
-#include "TimeSetPanel.h"
+#include "TimeShowPanel.h"
 
 /*
  * Hardware required:
@@ -14,7 +14,8 @@ namespace Resources {
   MD_AButton analogButton(0);
   const int BUZZER_PIN = 11;
   const int ALARM_FREQUENCY = 4600;
-  TimeSetPanel panel("Set the time:");
+//  TimeSetPanel panel("Set the time:");
+  TimeShowPanel panel;
 }
 
 void setup() {
