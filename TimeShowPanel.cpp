@@ -1,4 +1,5 @@
 #include "TimeShowPanel.h"
+#include "Resources.h"
 
 void TimeShowPanel::paint() {
   Resources::lcd.setCursor(0,0);

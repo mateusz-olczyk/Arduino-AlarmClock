@@ -1,12 +1,6 @@
 #ifndef TIME_H
 #define TIME_H
 
-#include <LiquidCrystal.h>
-
-namespace Resources {
-  extern LiquidCrystal lcd;
-}
-
 class Time {
 
   private:

@@ -1,8 +1,4 @@
-#include <LiquidCrystal.h>
-#include <MD_AButton.h>
-#include "TimeSetPanel.h"
-#include "TimeShowPanel.h"
-#include "PanelSelector.h"
+#include "Resources.h"
 
 /*
  * Hardware required:
@@ -11,24 +7,12 @@
  * - Buzzer on pin 11
  */
 
-namespace Resources {
-  LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
-  MD_AButton analogButton(0);
-  const int BUZZER_PIN = 11;
-  const int ALARM_FREQUENCY = 4600;
-  namespace Panels {
-    TimeSetPanel timeSetPanel("Set the time:");
-    TimeShowPanel timeShowPanel;
-    PanelSelector panelSelector;
-  }
-}
-
 void setup() {
   Resources::analogButton.setRepeatTime(200);
   Resources::lcd.begin(16, 2);
-  Resources::Panels::panelSelector.begin();
+  Resources::panelManager.begin();
 }
 
 void loop() {
-  Resources::Panels::panelSelector.handleEvents();
+  Resources::panelManager.handleEvents();
 }

@@ -1,4 +1,5 @@
 #include "Time.h"
+#include "Resources.h"
 #include <Arduino.h>
 
 int Time::getHour() {

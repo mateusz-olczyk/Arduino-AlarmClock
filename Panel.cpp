@@ -1,4 +1,6 @@
 #include "Panel.h"
+#include <Arduino.h>
+#include "Resources.h"
 
 void Panel::handleEvents() {
   unsigned long newTickTime = millis();

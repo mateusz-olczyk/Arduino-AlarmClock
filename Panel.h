@@ -1,14 +1,6 @@
 #ifndef PANEL_H
 #define PANEL_H
 
-#include <LiquidCrystal.h>
-#include <MD_AButton.h>
-
-namespace Resources {
-  extern LiquidCrystal lcd;
-  extern MD_AButton analogButton;
-}
-
 class Panel {
 
 private:
