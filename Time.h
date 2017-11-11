@@ -4,17 +4,18 @@
 class Time {
 
   private:
-  unsigned long seconds = 0;
+  unsigned long seconds;
 
   public:
-  int getHour();
+  Time(unsigned long seconds = 0);
+  int getHour() const;
   void setHour(int hour);
-  int getMinute();
+  int getMinute() const;
   void setMinute(int minute);
-  int getSecond();
+  int getSecond() const;
   void setSecond(int second);
-  Time & operator++();
-  void print(bool withSeconds);
+  Time operator+(const Time & time) const;
+  void print(bool withSeconds) const;
 
 };
 

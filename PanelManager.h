@@ -4,6 +4,7 @@
 #include "Panel.h"
 #include "TimeSetPanel.h"
 #include "TimeShowPanel.h"
+#include "DebugPanel.h"
 
 class PanelManager {
 
@@ -17,6 +18,7 @@ class PanelManager {
 
   TimeSetPanel timeSetPanel = TimeSetPanel("Set the time:");
   TimeShowPanel timeShowPanel;
+  DebugPanel debugPanel;
 
 };
 

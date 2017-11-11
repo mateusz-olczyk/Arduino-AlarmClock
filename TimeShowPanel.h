@@ -7,11 +7,14 @@
 class TimeShowPanel : public Panel {
 
   private:
-  Time time;
+  Time initializedRealTime;
+  unsigned long initializedArduinoTime;
+  Time getCurrentTime();
 
   public:
-  TimeShowPanel() : Panel(1000) {}
+  TimeShowPanel() : Panel(500) {}
   virtual void paint();
+  virtual void onKeyEvent(char key);
   virtual void onTickEvent();
   void setTime(const Time &time);
 

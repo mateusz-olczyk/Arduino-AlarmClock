@@ -1,16 +1,25 @@
 #include "TimeShowPanel.h"
 #include "Resources.h"
 
+Time TimeShowPanel::getCurrentTime() {
+  return initializedRealTime + Time((millis() - initializedArduinoTime)/1000);
+}
+
 void TimeShowPanel::paint() {
   Resources::lcd.setCursor(0,0);
-  time.print(true);
+  getCurrentTime().print(true);
+}
+
+void TimeShowPanel::onKeyEvent(char key) {
+  if (key == 'S')
+    Resources::panelManager.setPanel(&Resources::panelManager.debugPanel);
 }
 
 void TimeShowPanel::onTickEvent() {
-  ++time;
   paint();
 }
 
 void TimeShowPanel::setTime(const Time &time) {
-  this->time = time;
+  initializedArduinoTime = millis();
+  initializedRealTime = time;
 }
