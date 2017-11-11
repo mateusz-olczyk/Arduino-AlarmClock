@@ -10,19 +10,16 @@ namespace Resources {
 class Time {
 
   private:
-  int hour;
-  int minute;
-  int second;
+  unsigned long seconds = 0;
 
   public:
-  Time();
-  Time(unsigned long milliseconds);
   int getHour();
-  bool setHour(int hour);
+  void setHour(int hour);
   int getMinute();
-  bool setMinute(int minute);
+  void setMinute(int minute);
   int getSecond();
-  bool setSecond(int second);
+  void setSecond(int second);
+  Time & operator++();
   void print(bool withSeconds);
 
 };

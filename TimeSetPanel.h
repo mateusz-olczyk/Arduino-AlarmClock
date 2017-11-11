@@ -17,8 +17,7 @@ class TimeSetPanel : public Panel {
   int cursor_position = 0;
   void onLeftKeyEvent();
   void onRightKeyEvent();
-  void onUpKeyEvent();
-  void onDownKeyEvent();
+  void onUpDownKeyEvent(char key);
 
   public:
   TimeSetPanel(const char * message) : message(message) {}

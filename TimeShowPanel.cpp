@@ -6,6 +6,6 @@ void TimeShowPanel::paint() {
 }
 
 void TimeShowPanel::onTickEvent() {
-  time.setSecond(time.getSecond()+1);
+  ++time;
   paint();
 }

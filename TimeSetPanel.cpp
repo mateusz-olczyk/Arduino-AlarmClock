@@ -12,11 +12,8 @@ void TimeSetPanel::paint() {
 
 void TimeSetPanel::onKeyEvent(char key) {
   switch (key) {
-    case 'U':
-    onUpKeyEvent();
-    break;
-    case 'D':
-    onDownKeyEvent();
+    case 'U': case 'D':
+    onUpDownKeyEvent(key);
     break;
     case 'L':
     onLeftKeyEvent();
@@ -27,64 +24,37 @@ void TimeSetPanel::onKeyEvent(char key) {
   }
 }
 
-void TimeSetPanel::onUpKeyEvent() {
+void TimeSetPanel::onUpDownKeyEvent(char key) {
+  int direction = key == 'U' ? 1 : -1;
   switch (cursor_position) {
     case 0:
-    if(time.setHour(time.getHour()+10))
-      paint();
+    time.setHour(time.getHour() + direction*10);
     break;
     case 1:
-    if(time.setHour(time.getHour()+1))
-      paint();
+    time.setHour(time.getHour() + direction);
     break;
     case 3:
-    if(time.setMinute(time.getMinute()+10))
-      paint();
+    time.setMinute(time.getMinute() + direction*10);
     break;
     case 4:
-    if (time.setMinute(time.getMinute()+1))
-      paint();
+    time.setMinute(time.getMinute() + direction);
     break;
   }
-}
-
-void TimeSetPanel::onDownKeyEvent() {
-    switch (cursor_position) {
-    case 0:
-    if (time.setHour(time.getHour()-10))
-      paint();
-    break;
-    case 1:
-    if (time.setHour(time.getHour()-1))
-      paint();
-    break;
-    case 3:
-    if(time.setMinute(time.getMinute()-10))
-      paint();
-    break;
-    case 4:
-    if(time.setMinute(time.getMinute()-1))
-      paint();
-    break;
-  }
+  paint();
 }
 
 void TimeSetPanel::onLeftKeyEvent() {
-  if (cursor_position == 1 || cursor_position == 4) {
+  if (cursor_position == 1 || cursor_position == 4)
     cursor_position -= 1;
-    paint();
-  } else if (cursor_position == 3) {
+  else if (cursor_position == 3)
     cursor_position -= 2;
-    paint();
-  }
+  paint();
 }
 
 void TimeSetPanel::onRightKeyEvent() {
-  if (cursor_position == 0 || cursor_position == 3) {
+  if (cursor_position == 0 || cursor_position == 3)
     cursor_position += 1;
-   paint();
-  } else if (cursor_position == 1) {
+  else if (cursor_position == 1)
     cursor_position += 2;
-    paint();
-  }
+  paint();
 }
