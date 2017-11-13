@@ -2,7 +2,7 @@
 #include "Resources.h"
 
 void PanelManager::begin() {
-  setPanel(&Resources::panelManager.timeSetPanel);
+  setPanel(&Resources::panelManager.currentTimeSetPanel);
 }
 
 void PanelManager::handleEvents() {

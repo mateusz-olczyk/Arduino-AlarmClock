@@ -2,9 +2,10 @@
 #define PANEL_MANAGER_H
 
 #include "Panel.h"
-#include "TimeSetPanel.h"
+#include "CurrentTimeSetPanel.h"
+#include "AlarmTimeSetPanel.h"
 #include "TimeShowPanel.h"
-#include "DebugPanel.h"
+#include "AlarmPanel.h"
 
 class PanelManager {
 
@@ -16,9 +17,10 @@ class PanelManager {
   void handleEvents();
   void setPanel(Panel * panel);
 
-  TimeSetPanel timeSetPanel = TimeSetPanel("Set the time:");
+  CurrentTimeSetPanel currentTimeSetPanel;
+  AlarmTimeSetPanel alarmTimeSetPanel;
   TimeShowPanel timeShowPanel;
-  DebugPanel debugPanel;
+  AlarmPanel alarmPanel;
 
 };
 

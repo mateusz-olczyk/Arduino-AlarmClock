@@ -1,7 +1,7 @@
 #include "TimeSetPanel.h"
 #include "Resources.h"
 
-void TimeSetPanel::paint() {
+void TimeSetPanel::paint() const {
   Resources::lcd.noCursor();
   Resources::lcd.setCursor(0, 0);
   Resources::lcd.print(message);
@@ -23,8 +23,7 @@ void TimeSetPanel::onKeyEvent(char key) {
     onRightKeyEvent();
     break;
     case 'S':
-    Resources::panelManager.timeShowPanel.setTime(time);
-    Resources::panelManager.setPanel(&Resources::panelManager.timeShowPanel);
+    onSelectKeyEvent();
     break;
   }
 }

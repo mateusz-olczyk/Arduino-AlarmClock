@@ -15,6 +15,7 @@ class Time {
   int getSecond() const;
   void setSecond(int second);
   Time operator+(const Time & time) const;
+  bool operator==(const Time & time) const;
   void print(bool withSeconds) const;
 
 };

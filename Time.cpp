@@ -32,6 +32,10 @@ Time Time::operator+(const Time & time) const {
   return Time(seconds + time.seconds);
 }
 
+bool Time::operator==(const Time & time) const {
+  return seconds == time.seconds;
+}
+
 void Time::print(bool withSeconds) const {
   Resources::lcd.print(getHour()/10);
   Resources::lcd.print(getHour()%10);

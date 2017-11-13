@@ -16,8 +16,10 @@ class TimeSetPanel : public Panel {
 
   public:
   TimeSetPanel(const char * message) : message(message) {}
-  virtual void paint();
+  const Time & getTime() const {return time;}
+  virtual void paint() const;
   virtual void onKeyEvent(char key);
+  virtual void onSelectKeyEvent() = 0;
 
 };
 
